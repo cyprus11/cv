@@ -1,7 +1,21 @@
+@media (max-width: 375px) {
+  .photo {
+    display: none;
+  }
+}
+
+body {
+  word-wrap: break-word;
+}
+
 .header {
   padding-top: 20px;
 }
 
 .photo {
   border-radius: 20px;
+}
+
+table {
+  display: table-cell;
 }
