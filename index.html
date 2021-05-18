@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Резюме Тюгаева Алексея Владимировича</title>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+  <script src="js/html2canvas.min.js"></script>
+  <script src="js/script.js"></script>
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -12,19 +17,23 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Sans+Narrow:wght@400;700&family=Roboto+Slab:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 </head>
-<body>
+<body id="target">
 <div class="container">
   <div class="row">
     <div class="row header">
       <div class="ten columns">
         <div class="row">
-          <h2><b>Тюгаев Алексей Владимирович</b></h2>
-          <ul>
-            <li>Возраст: 31 год</li>
-            <li>Место проживания: г. Санкт-Петербург</li>
-            <li>Электронная почта: <a href="mailto:alexx10@mail.ru">alexx10@mail.ru</a></li>
-            <li>Образование: высшее</li>
-          </ul>
+          <div class="personal-info">
+            <h2><b>Тюгаев Алексей Владимирович</b></h2>
+            <ul>
+              <li>Возраст: 31 год</li>
+              <li>Место проживания: г. Санкт-Петербург</li>
+              <li>Электронная почта: <a href="mailto:alexx10@mail.ru">alexx10@mail.ru</a></li>
+              <li>Образование: высшее</li>
+            </ul>
+          </div>
+          <div id="editor"></div>
+          <button id="cmd">Сохранить в PDF</button>
         </div>
         <div class="row">
           <h4>Цель поиска работы:</h4>
@@ -150,5 +159,24 @@
     </p>
   </div>
 </div>
+<!--
+  <script>
+  window.jsPDF = window.jspdf.jsPDF
+  var doc = new jsPDF();
+    var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+            return true;
+        }
+    };
+
+    $('#cmd').click(function () {
+        doc.fromHTML($('#content').html(), 15, 15, {
+            'width': 170,
+            'elementHandlers': specialElementHandlers
+        });
+        doc.save('TyugaevAV.pdf');
+    });
+  </script>
+-->
 </body>
 </html>
