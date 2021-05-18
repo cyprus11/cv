@@ -9,7 +9,7 @@ $(document).ready(function() {
   };
 
   $("#cmd").click(function(){
-    var doc = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+    var doc = new jsPDF();
     //doc.html($("#target").html(),15,15,{
     //  "width":170,
     //  "elementHandlers":specialElementHandlers
